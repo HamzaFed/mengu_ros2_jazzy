@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mengu">
+
+  <!-- ROS 2 Control -->
+  <gazebo>
+
+    <!-- ROS 2 Iron or above -->
+    <xacro:unless value="$(arg is_ignition)">
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+
+      </plugin>
+    </xacro:unless>
+  </gazebo>
+
+</robot>
