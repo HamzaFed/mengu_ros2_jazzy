@@ -28,12 +28,16 @@ source install/setup.bash
 
 ## Usage
 
-- RViz 
-    ~$ ros2 launch mengu_description display_launch.py
+### RViz
 
-- Gazebo
-     ~$ ros2 launch mengu_description gazebo_launch.py
+```bash
+ros2 launch mengu_description display_launch.py
+```
+### Gazebo
 
+```bash
+ros2 launch mengu_description gazebo_launch.py
+```
 ## Roadmap
 
 - Add ros2_control integration
