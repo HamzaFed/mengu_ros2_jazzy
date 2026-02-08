@@ -7,9 +7,12 @@
     <!-- ROS 2 Iron or above -->
     <xacro:unless value="$(arg is_ignition)">
       <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-
+	<parameters>$(find mengu_controller)/config/mengu_controllers.yaml</parameters>
       </plugin>
     </xacro:unless>
   </gazebo>
 
 </robot>
+
+
+
