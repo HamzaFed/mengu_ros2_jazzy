@@ -3,12 +3,12 @@
 
     <ros2_control name="RobotSystem" type="system">
 
-        <xacro:property name="PI" value="3.14159265359" />
-
-        <!-- ros2_control Gazebo -->
         
 
-        <!-- ROS 2 Iron or above -->
+
+        <xacro:arg name="limit_angles" default="$(find mengu_controller)/config/mengu_parameters.yaml" />
+        <xacro:property name="limits" value="${xacro.load_yaml('$(arg limit_angles)')}" />
+
         <xacro:unless value="$(arg is_ignition)">
             <hardware>
                 <plugin>gz_ros2_control/GazeboSimSystem</plugin>
@@ -17,40 +17,52 @@
 
         <joint name="joint_1">
             <command_interface name="position">
-            <param name="min">-${PI / 2}</param>
-            <param name="max">${PI / 2}</param>
+                <param name="min">${limits['j1_min']}</param>
+                <param name="max">${limits['j1_max']}</param>
             </command_interface>
             <state_interface name="position"/>
         </joint>
 
         <joint name="joint_2">
             <command_interface name="position">
-            <param name="min">-${PI / 2}</param>
-            <param name="max">${PI / 2}</param>
+                <param name="min">${limits['j2_min']}</param>
+                <param name="max">${limits['j2_max']}</param>
             </command_interface>
             <state_interface name="position"/>
         </joint>
 
         <joint name="joint_3">
             <command_interface name="position">
-            <param name="min">-${PI / 2}</param>
-            <param name="max">${PI / 2}</param>
+                <param name="min">${limits['j3_min']}</param>
+                <param name="max">${limits['j3_max']}</param>
             </command_interface>
             <state_interface name="position"/>
         </joint>
 
         <joint name="joint_4">
             <command_interface name="position">
-            <param name="min">-${PI / 2}</param>
-            <param name="max">0.0</param>
+                <param name="min">${limits['j4_min']}</param>
+                <param name="max">${limits['j4_max']}</param>
             </command_interface>
             <state_interface name="position"/>
         </joint>
 
         <joint name="joint_5">
-            <param name="mimic">joint_4</param>
-            <param name="multiplier">-1</param>
+            <command_interface name="position">
+                <param name="min">${limits['j5_min']}</param>
+                <param name="max">${limits['j5_max']}</param>
+            </command_interface>
+            <state_interface name="position"/>
         </joint>
+
+        <joint name="joint_6">
+            <command_interface name="position">
+                <param name="min">${limits['j6_min']}</param>
+                <param name="max">${limits['j6_max']}</param>
+            </command_interface>
+            <state_interface name="position"/>
+        </joint>
+        
     </ros2_control>
 
 </robot>

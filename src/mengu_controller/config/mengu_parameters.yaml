@@ -1,0 +1,13 @@
+j1_min: !degrees -170
+j2_min: !degrees -90
+j3_min: !degrees -52
+j4_min: !degrees -165
+j5_min: !degrees -105
+j6_min: !degrees -155
+
+j1_max: !degrees 170
+j2_max: !degrees 42
+j3_max: !degrees 89
+j4_max: !degrees 165
+j5_max: !degrees 105
+j6_max: !degrees 155
