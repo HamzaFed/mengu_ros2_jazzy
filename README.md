@@ -115,5 +115,9 @@ Make sure to open the gazebo(See gazebo launch title) before starting moveit. Wh
 - Change the "fixed frame" option to "world".
 - Click Add a new display (ctrl + n) and add "motion planning". After doing this, your robot should appear on the screen.
 
+![Gazebo Screen](images/gazebo.png)
+![Rviz2 Screen](images/rviz2.png)
+![examples](images/examples.png)
+
 
 
