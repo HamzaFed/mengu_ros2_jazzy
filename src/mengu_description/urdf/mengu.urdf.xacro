@@ -17,7 +17,11 @@
 
 
     <material name="blue">
-        <color rgba="0 0 1 1"/>
+        <color rgba="0 0 0.65 1"/>
+    </material>
+
+    <material name="gray">
+      <color rgba="0.5 0.5 0.5 1"/>
     </material>
 
     <!-- WORLD -->
@@ -39,6 +43,8 @@
                  iyy="0.0014946" iyz="-0.00036051" izz="0.0042554"/>
       </inertial>
       <visual>
+        <material name="gray"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/base_link.STL"/>
@@ -66,7 +72,15 @@
       
       <visual>
         <material name="blue"/>
-            
+        <material>
+          <pbr>
+            <metal>
+              <albedo>0.3 0.3 0.3 1</albedo>
+              <metalness>0.9</metalness>
+              <roughness>0.4</roughness>
+            </metal>
+          </pbr>
+        </material>    
         <origin xyz="0 0 -0.092" rpy="${-PI} 0 0"/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_1.STL"/>
@@ -75,7 +89,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_1.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -88,7 +102,7 @@
       <limit
         lower="${limits['j1_min']}"
         upper="${limits['j1_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.0472"
       />
     </joint>
@@ -102,6 +116,8 @@
                  iyy="0.0020836" iyz="-0.00056569" izz="0.0056129"/>
       </inertial>
       <visual>
+        <material name="gray"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin xyz="0 0 0" rpy="0 0 ${-PI}"/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_2.STL"/>
@@ -110,7 +126,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_2.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -123,7 +139,7 @@
       <limit
         lower="${limits['j2_min']}"
         upper="${limits['j2_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.0472"
       />
     </joint>
@@ -140,6 +156,7 @@
       </inertial>
       <visual>
         <material name="blue"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin xyz="0 0 0" rpy="0 0 0 "/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_3.STL"/>
@@ -148,7 +165,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_3.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -161,7 +178,7 @@
       <limit
         lower="${limits['j3_min']}"
         upper="${limits['j3_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.0472"
       />
     </joint>
@@ -177,6 +194,8 @@
                  iyy="0.0031033" iyz="-2.3301E-05" izz="0.00022264"/>
       </inertial>
       <visual>
+        <material name="gray"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin xyz="0 0 0" rpy="0 0 0 "/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_4.STL"/>
@@ -185,7 +204,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_4.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -198,7 +217,7 @@
       <limit
         lower="${limits['j4_min']}"
         upper="${limits['j4_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.0472"
       />
     </joint>
@@ -216,6 +235,7 @@
 
       <visual>
         <material name="blue"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_5.STL"/>
@@ -224,7 +244,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_5.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -237,7 +257,7 @@
       <limit
         lower="${limits['j5_min']}"
         upper="${limits['j5_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.0472"
       />
     </joint>
@@ -254,6 +274,8 @@
       </inertial>
 
       <visual>
+        <material name="gray"/>
+        <material>Gazebo/BrushedMetal</material>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
             <mesh filename="package://mengu_description/meshes/link_6.STL"/>
@@ -262,7 +284,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://mengu_description/meshes/link_6.STL"/>
+            <cylinder radius="0.02" length="0.05"/>
         </geometry>
       </collision>
     </link>
@@ -275,7 +297,7 @@
       <limit
         lower="${limits['j6_min']}"
         upper="${limits['j6_max']}"
-        effort="100"
+        effort="1000"
         velocity="1.5708"
       />
     </joint>

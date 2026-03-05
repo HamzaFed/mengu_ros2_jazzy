@@ -25,7 +25,17 @@ The project evolved from a simple pan-tilt mechanism into a fully modeled
 ### mengu_utils
 - - Euler ↔ Quaternion conversion service
 
+### mengu_moveit
+- Motion planning configuration using MoveIt 2.
 
+- Kinematics solver setup for the 6-DoF manipulator.
+
+- Performance Optimized Collision Modeling: Specifically designed to use simplified geometric shapes (cylinders) instead of high-poly meshes to boost Real Time Factor (RTF) from 5% to 99%.
+
+- Interactive manipulation support via RViz.
+
+- Trajectory execution and planning group definitions.
+ 
 ## Features
 
 - 6DoF robotic arm model
@@ -42,6 +52,7 @@ The project evolved from a simple pan-tilt mechanism into a fully modeled
 colcon build
 source install/setup.bash
 ```
+- Don't forget to "source" in every terminal you open.
 
 ## Usage
 
@@ -94,12 +105,15 @@ y: 0.0
 z: 0.0
 w: 0.0 
 ```
+### Moveit (Rviz2)
 
-## Roadmap
-- Implement custom inverse kinematics solver
+```bash
+ros2 launch mengu_moveit moveit.launch.py
+```
+Make sure to open the gazebo(See gazebo launch title) before starting moveit. When the rviz screen opens follow the steps below.
 
-- Improve trajectory smoothing and tuning
+- Change the "fixed frame" option to "world".
+- Click Add a new display (ctrl + n) and add "motion planning". After doing this, your robot should appear on the screen.
 
-- Hardware integration (STM / real motors)
 
-- Task-level control and autonomy
+
